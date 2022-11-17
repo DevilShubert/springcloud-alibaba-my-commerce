@@ -1,0 +1,37 @@
+server:
+  port: 7001
+  servlet:
+    context-path: /my-commerce-admin
+spring:
+  application:
+    name: my-commerce-admin
+  security:
+    user:
+      name: imooc-lzr
+      password: 11111111
+  cloud:
+    nacos:
+      # 服务注册发现
+      discovery:
+        enabled: true  # 如果不想使用 Nacos 进行服务注册和发现, 设置为 false 即可
+        server-addr: 49.235.93.159:8848,49.235.93.159:8858,49.235.93.159:8868 # Nacos 服务器地址
+        namespace: ebf3ace0-a262-4c25-b0df-6e46a369e3d6
+        metadata:
+          management:
+            context-path: ${server.servlet.context-path}/actuator
+          user.name: imooc-lzr
+          user.password: 11111111
+  # 因为admin使用的是vue框架，而且还是MVC模式所以还需配置thymeleaf
+  thymeleaf:
+    check-template: false
+    check-template-location: false
+
+# 暴露端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'  # 需要开放的端点。默认值只打开 health 和 info 两个端点。通过设置 *, 可以开放所有端点
+  endpoint:
+    health:
+      show-details: always # 有关actuator配置

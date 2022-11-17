@@ -1,0 +1,3 @@
+cn/lzr/ecommerce/annotation/IgnoreResponseAdvice.class
+cn/lzr/ecommerce/advice/CommonResponseDataAdvice.class
+cn/lzr/ecommerce/advice/GlobalExceptionAdvice.class

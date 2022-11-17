@@ -1,0 +1,28 @@
+server:
+  port: 8000
+  servlet:
+    context-path: /ecommerce-nacos-client
+spring:
+  application:
+    name: my-commerce-nacos-client # 应用名称也是构成 Nacos 配置管理 dataId 字段的一部分 (当 config.prefix 为空时)
+  cloud:
+    nacos:
+      # 服务注册发现
+      discovery:
+        enabled: true  # 如果不想使用 Nacos 进行服务注册和发现, 设置为 false 即可
+        server-addr: 49.235.93.159:8848,49.235.93.159:8858,49.235.93.159:8868 # Nacos 服务器地址
+        namespace: ebf3ace0-a262-4c25-b0df-6e46a369e3d6
+        #  元数据中指定用于被Spring Boot Admin发现的路径接口/actuator
+        metadata:
+          management:
+            context-path: ${server.servlet.context-path}/actuator
+
+# 暴露端点，用于Spring Boot Admin
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
