@@ -10,6 +10,7 @@
         <module name="my-commerce-admin" />
         <module name="my-commerce-common" />
         <module name="my-commerce-alibaba-nacos-client" />
+        <module name="my-commerce-authority-center" />
         <module name="my-commerce-mvc-config" />
       </profile>
     </annotationProcessing>
@@ -18,6 +19,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="my-commerce-admin" options="-parameters" />
       <module name="my-commerce-alibaba-nacos-client" options="-parameters" />
+      <module name="my-commerce-authority-center" options="-parameters" />
       <module name="my-commerce-common" options="-parameters" />
       <module name="my-commerce-mvc-config" options="-parameters" />
     </option>
