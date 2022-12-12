@@ -16,6 +16,6 @@ public class CommonConstant {
     /** JWT 中存储用户信息的 key */
     public static final String JWT_USER_INFO_KEY = "my-commerce-user";
 
-    /** 授权中心的 service-id */
+    /** 授权中心的 service-id，用于注册中心使用 */
     public static final String AUTHORITY_CENTER_SERVICE_ID = "my-commerce-authority-center";
 }

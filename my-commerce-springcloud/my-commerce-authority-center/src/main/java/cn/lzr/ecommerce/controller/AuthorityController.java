@@ -2,12 +2,10 @@ package cn.lzr.ecommerce.controller;
 
 import cn.lzr.ecommerce.annotation.IgnoreResponseAdvice;
 import cn.lzr.ecommerce.service.IJWTService;
-import cn.lzr.ecommerce.service.impl.JWTServiceImpl;
 import cn.lzr.ecommerce.vo.JwtToken;
 import cn.lzr.ecommerce.vo.UsernameAndPassword;
 import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,7 +30,7 @@ public class AuthorityController {
      * <h2>使用IgnoreResponseAdvice注解作用是直接返回token内容</h2>
      * */
     @IgnoreResponseAdvice
-    @PostMapping("/doAuthority")
+    @PostMapping("/doLogin")
    public JwtToken doAuthority(@RequestBody UsernameAndPassword usernameAndPassword) throws Exception {
         log.info("request to get token with param: [{}]", JSON.toJSONString(usernameAndPassword));
        String jwtToken = ijwtService.generateToken(usernameAndPassword.getUsername(), usernameAndPassword.getPassword());
@@ -44,7 +42,7 @@ public class AuthorityController {
      * <h2>注册用户并返回当前注册用户的 Token, 即通过授权中心创建用户</h2>
      * */
     @IgnoreResponseAdvice
-    @PostMapping("/token")
+    @PostMapping("/doRegister")
     public JwtToken doRegister(@RequestBody UsernameAndPassword usernameAndPassword) throws Exception {
         log.info("register user with param: [{}]", JSON.toJSONString(usernameAndPassword));
         return new JwtToken(ijwtService.registerUserAndGenerateToken(usernameAndPassword));

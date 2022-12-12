@@ -57,6 +57,16 @@
             <artifactId>screw-core</artifactId>
             <version>1.0.3</version>
         </dependency>
+        <!--日志追踪Sleuth and Zipkin：spring-cloud-starter-sleuth + spring-cloud-sleuth-zipkin-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zipkin</artifactId>
+        </dependency>
+        <!--Kafka-->
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
+        </dependency>
     </dependencies>
 
 </project>

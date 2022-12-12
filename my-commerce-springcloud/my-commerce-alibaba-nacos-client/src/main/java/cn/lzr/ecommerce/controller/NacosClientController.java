@@ -28,4 +28,7 @@ public class NacosClientController {
         return nacosClientService.getNacosClientInfo(serviceId);
     }
 
+
+
+
 }

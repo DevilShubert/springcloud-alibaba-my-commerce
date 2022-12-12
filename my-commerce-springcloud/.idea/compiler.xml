@@ -7,6 +7,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="my-commerce-gateway" />
         <module name="my-commerce-admin" />
         <module name="my-commerce-common" />
         <module name="my-commerce-alibaba-nacos-client" />
@@ -21,6 +22,7 @@
       <module name="my-commerce-alibaba-nacos-client" options="-parameters" />
       <module name="my-commerce-authority-center" options="-parameters" />
       <module name="my-commerce-common" options="-parameters" />
+      <module name="my-commerce-gateway" options="-parameters" />
       <module name="my-commerce-mvc-config" options="-parameters" />
     </option>
   </component>
