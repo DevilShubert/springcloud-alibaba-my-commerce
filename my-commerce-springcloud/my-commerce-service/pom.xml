@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>my-commerce-springcloud</artifactId>
+        <groupId>cn.lzr.ecommerce</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>my-commerce-service</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <!-- 注意这里的打包方式为pom，说明仅仅作为父模块进行打包而不作为依赖 -->
+    <packaging>pom</packaging>
+
+    <!-- 模块名及描述信息 -->
+    <name>e-commerce-service</name>
+    <description>电商服务模块父模块</description>
+
+    <modules>
+        <module>my-commerce-service-config</module>
+        <module>my-commerce-account-service</module>
+        <module>my-commerce-service-sdk</module>
+    </modules>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+        <!-- swagger 用于定义 API 文档 -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>2.9.2</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>2.9.2</version>
+        </dependency>
+        <!-- 美化 swagger -->
+        <dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>swagger-bootstrap-ui</artifactId>
+            <version>1.9.3</version>
+        </dependency>
+    </dependencies>
+
+</project>

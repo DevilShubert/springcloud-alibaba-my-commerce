@@ -114,6 +114,7 @@ public class GlobalLoginOrRegisterFilter implements GlobalFilter, Ordered {
                 response.setStatusCode(HttpStatus.UNAUTHORIZED);
                 return response.setComplete();
         }
+        log.info("loginUserInfo parse is: [{}]", JSON.toJSONString(loginUserInfo));
         return chain.filter(exchange);
     }
 

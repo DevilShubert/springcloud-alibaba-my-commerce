@@ -40,7 +40,13 @@ public class JWTServiceImpl implements IJWTService {
         this.ecommerceUserDao = ecommerceUserDao;
     }
 
-
+    /**
+     * <h2>校验用户名与密码并生成token</h2>
+     * @param username
+     * @param password
+     * @return
+     * @throws Exception
+     */
     @Override
     public String generateToken(String username, String password) throws Exception {
         return generateToken(username, password, 0);
@@ -80,9 +86,15 @@ public class JWTServiceImpl implements IJWTService {
 
     }
 
+    /**
+     * <h2>尝试祖册用户并返回token</h2>
+     * @param usernameAndPassword
+     * @return
+     * @throws Exception
+     */
     @Override
     public String registerUserAndGenerateToken(UsernameAndPassword usernameAndPassword) throws Exception {
-// 先去校验用户名是否存在, 如果存在, 不能重复注册
+        // 先去校验用户名是否存在, 如果存在, 不能重复注册
         EcommerceUser oldUser = ecommerceUserDao.findByUsername(
                 usernameAndPassword.getUsername());
 

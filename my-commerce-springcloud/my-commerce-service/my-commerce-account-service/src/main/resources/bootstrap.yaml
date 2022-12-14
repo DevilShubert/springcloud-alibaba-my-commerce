@@ -1,0 +1,64 @@
+server:
+  servlet:
+    context-path: /ecommerce-account-service
+  port: 7019
+spring:
+  application:
+    name: my-commerce-account-service
+  cloud:
+    # 服务注册与发现
+    nacos:
+      discovery:
+        enabled: true  # 如果不想使用 Nacos 进行服务注册和发现, 设置为 false 即可
+        server-addr: 49.235.93.159:8848,49.235.93.159:8858,49.235.93.159:8868 # Nacos 服务器地址
+        namespace: ebf3ace0-a262-4c25-b0df-6e46a369e3d6
+        #  元数据中指定用于被Spring Boot Admin发现的路径接口/actuator
+        metadata:
+          management:
+            context-path: ${server.servlet.context-path}/actuator
+  # 用于微服务链路追踪
+  kafka:
+    bootstrap-servers: 127.0.0.1:9092
+    producer:
+      retries: 3
+    consumer:
+      auto-offset-reset: latest
+  zipkin:
+    sender:
+      type: kafka # 默认是 web
+    base-url: http://localhost:9411/
+  # ORM数据访问
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+    open-in-view: true
+  datasource:
+    # 数据源
+    url: jdbc:mysql://127.0.0.1:3306/imooc_e_commerce?autoReconnect=true&useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: root
+    password: LIUzheran..123
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # 连接池
+    hikari:
+      maximum-pool-size: 8
+      minimum-idle: 4
+      idle-timeout: 30000
+      connection-timeout: 30000
+      max-lifetime: 45000
+      auto-commit: true
+      pool-name: ImoocEcommerceHikariCP
+# 暴露端点，用于Spring Boot Admin
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always

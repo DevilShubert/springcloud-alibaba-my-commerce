@@ -15,6 +15,7 @@
         <module>my-commerce-admin</module>
         <module>my-commerce-authority-center</module>
         <module>my-commerce-gateway</module>
+        <module>my-commerce-service</module>
     </modules>
 
     <packaging>pom</packaging>
