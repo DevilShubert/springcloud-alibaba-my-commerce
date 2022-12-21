@@ -27,6 +27,20 @@ spring:
     sender:
       type: kafka # 默认是 web
     base-url: http://localhost:9411/
+# Feign 相关配置
+feign:
+  # feign 开启 gzip 压缩
+  compression:
+    request:
+      enabled: true
+      mime-types: text/xml,application/xml,application/json
+      min-request-size: 1024
+  # 禁用默认的 http, 启用 okhttp
+  httpclient:
+    enabled: false
+  okhttp:
+    enabled: true
+
 # 暴露端点，用于Spring Boot Admin
 management:
   endpoints:

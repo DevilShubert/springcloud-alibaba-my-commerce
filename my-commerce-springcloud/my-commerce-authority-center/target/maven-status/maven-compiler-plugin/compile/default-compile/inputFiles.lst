@@ -1,7 +1,0 @@
-/Users/liuzheran/Desktop/学习笔记/后端部分/微服务相关/微服务项目/springcloud-alibaba-my-commerce/my-commerce-springcloud/my-commerce-authority-center/src/main/java/cn/lzr/ecommerce/AuthorityCenterApplication.java
-/Users/liuzheran/Desktop/学习笔记/后端部分/微服务相关/微服务项目/springcloud-alibaba-my-commerce/my-commerce-springcloud/my-commerce-authority-center/src/main/java/cn/lzr/ecommerce/service/impl/JWTServiceImpl.java
-/Users/liuzheran/Desktop/学习笔记/后端部分/微服务相关/微服务项目/springcloud-alibaba-my-commerce/my-commerce-springcloud/my-commerce-authority-center/src/main/java/cn/lzr/ecommerce/controller/AuthorityController.java
-/Users/liuzheran/Desktop/学习笔记/后端部分/微服务相关/微服务项目/springcloud-alibaba-my-commerce/my-commerce-springcloud/my-commerce-authority-center/src/main/java/cn/lzr/ecommerce/dao/EcommerceUserDao.java
-/Users/liuzheran/Desktop/学习笔记/后端部分/微服务相关/微服务项目/springcloud-alibaba-my-commerce/my-commerce-springcloud/my-commerce-authority-center/src/main/java/cn/lzr/ecommerce/entity/EcommerceUser.java
-/Users/liuzheran/Desktop/学习笔记/后端部分/微服务相关/微服务项目/springcloud-alibaba-my-commerce/my-commerce-springcloud/my-commerce-authority-center/src/main/java/cn/lzr/ecommerce/service/IJWTService.java
-/Users/liuzheran/Desktop/学习笔记/后端部分/微服务相关/微服务项目/springcloud-alibaba-my-commerce/my-commerce-springcloud/my-commerce-authority-center/src/main/java/cn/lzr/ecommerce/constant/AuthorityConstant.java
